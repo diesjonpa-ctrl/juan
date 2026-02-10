@@ -8,6 +8,10 @@
 <style>
     body{
         text-align: center;
+        background-image: url(https://images7.memedroid.com/images/UPLOADED871/60c79dd157eb0.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
     #boton_pa_salir_al_menu{
         position: absolute;
@@ -20,6 +24,22 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
+    }
+    .primer_mensajito{
+        font-size: 30px;
+        color: #000000;
+        font-family: cursive;
+        margin: 20px 0;
+    }
+    #arbolito{
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #0b8700;
+        color: #8a0000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 10px 40px;
     }
 </style>
 <body>
@@ -43,12 +63,13 @@
         $apellido_del_usuario = strtoupper($_POST["apellido"]);
         $edad = strtoupper($_POST["edad"]);
         $email = strtoupper($_POST["Email"]) ;
-        echo "todo listo " . htmlspecialchars($nombre_del_usuario, ENT_QUOTES, 'UTF-8') 
-        . ' ' . htmlspecialchars($apellido_del_usuario,ENT_QUOTES,'UTF-8' ) . ' ' 
-        . 'es verdad que tienes' . ' ' . htmlspecialchars($edad,ENT_QUOTES,'UTF-8' ) . ' ' . 'años de edad';
+        echo "<div class='primer_mensajito'>todo listo " . htmlspecialchars($nombre_del_usuario, ENT_QUOTES, 'UTF-8')
+        . htmlspecialchars($apellido_del_usuario,ENT_QUOTES,'UTF-8') . " tu edad es: " 
+        . htmlspecialchars($edad, ENT_QUOTES, 'UTF-8') . " y tu email es: " 
+        . htmlspecialchars($email, ENT_QUOTES, 'UTF-8') . "</div>";
     }
     else {
-        echo "faltan datos por llenar ";
+        echo "<div class= 'primer_mensajito'>faltan datos por llenar </div>";
     }
      ?>
     <form method="get" action="nueva_pagina.php">
@@ -59,19 +80,24 @@
             <label for="nombre4" ><h3>mas nombres </h3></label><input type="text"id="nombre4" name="nombre4">
             <input type="submit" value="envio">
     </form>
-</body>
-</html>
 <?php
-
     $numeros = [70,2,60,4,5,6,30,8,9,10,50]; 
     foreach ($numeros as $numero) {
         if ($numero >= 50) {
             echo "<br>";
-            echo "estos son los mayores del nivel 50 " . $numero;
+            echo "<font size='10px'>estos son los mayores del nivel 50 " . $numero;
             break;
         } else {
             echo "<br>";
-            echo "estos son los menores de 50: " . $numero;
+            echo "<font size='10px'>estos son los menores de 50: " . $numero;
         }
     }
 ?>
+    <button id="arbolito">Un arbolito de navidad</button>
+    <script>
+        document.getElementById("arbolito").addEventListener("click", function() {
+            window.location.href = "http://localhost/juan/triangulo.php";
+        });
+    </script>
+</body>
+</html>

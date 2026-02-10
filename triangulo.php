@@ -7,8 +7,15 @@
     <style>
         body{
             text-align: center;
-            font-size: 80px;
+            font-size: 100px;
+            font-family:cursive;
+            color: #0b8700;
+            background-image:url(https://img.freepik.com/vector-gratis/fondo-inviernos-navidad-copos-nieve-que-brillan-intensamente-rojo_1017-34484.jpg?semt=ais_user_personalization&w=740&q=80) ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
         }
+
     </style>
 </head>
 <body>
@@ -20,5 +27,6 @@
           echo "<br>";
       } 
     ?>
+    
 </body>
 </html>
