@@ -62,13 +62,21 @@
             $numero_de_incidentes = $_POST["numero_de_incidentes"];
             $costo_base = 500;
             $fecha_actual = date("d-m-Y"); 
-            if ($edad < 25 && $fecha_actual - $fecha_de_la_patente < 2) {
-                $costo = (30/100 *$costo_base) + ($numero_de_incidentes * (20/100 *  $costo_base)) + (15/100 *$costo_base);
-            } elseif ($edad < 25) {
-                $costo = (20/100 *$costo_base) + ($numero_de_incidentes * (20/100 *$costo_base));
-            } elseif ($fecha_actual - $fecha_de_la_patente < 2) {
+
+            if ($edad < 25 && ($fecha_actual - $fecha_de_la_patente) < 2){
+                $costo = $costo_base + (30/100 * $costo_base) + ($numero_de_incidentes * (20/100 *  $costo_base)) + (15/100 *$costo_base);
+            } elseif ($edad < 25 && ($fecha_actual - $fecha_de_la_patente) > 2){
+                $costo = $costo_base + (30/100 * $costo_base) + ($numero_de_incidentes * (20/100 *$costo_base));
+            } elseif ($edad >= 25 && ($fecha_actual - $fecha_de_la_patente) < 2){
                 $costo = $costo_base + ($numero_de_incidentes * (20/100 *$costo_base)) + (15/100 *$costo_base);
-            } else {
+            } 
+            elseif ( $edad > 18 ) {
+                echo "<br>";
+                echo "<div id='respuestas_culeras'>A ver " . htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8')  . " " 
+                . htmlspecialchars($apellido, ENT_QUOTES, 'UTF-8')  . ", no puedes tener una edad menor a 18 años para poder sacar una aseguración. </div>";
+                exit;
+            } 
+            else {
                 $costo = $costo_base + ($numero_de_incidentes * (20/100 *$costo_base));
             }
             echo "<br>";

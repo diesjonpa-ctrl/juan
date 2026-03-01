@@ -20,12 +20,18 @@
 </head>
 <body>
     <?php
-      for ($i = 1; $i <= 10; $i++) {
-          for ($j = 1; $j <= $i; $j++) {
-              echo " * ";
-          }
-          echo "<br>";
-      } 
+    for ($i = 1; $i <= 10; $i++) {
+        for ($j = 1; $j <= $i; $j++) {
+            echo " * ";
+        }
+        echo "<br>";
+    }
+    $numero = 2;
+    while ($numero <= 20) {
+    echo "<br>";
+        $numero= $numero + 2;
+        echo $numero;
+    } 
     ?>
     
 </body>

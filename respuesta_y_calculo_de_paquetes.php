@@ -84,7 +84,7 @@
             echo "<width='100%'>El costo del envío es: $" . number_format($costo, 2);
         } else {
             echo "<br>";
-            echo "<width='100%'>Faltan datos por llenar para calcular el costo del envío.";
+            echo "<width='100%'>Faltan datos por llenar para calcular el costo del envío Papu.";
         }
         ?>
     <button id="arbolito">Un arbolito de navidad</button>

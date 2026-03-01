@@ -12,6 +12,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        font-family: cursive;
     }
     #boton_pa_salir_al_menu{
         position: absolute;
@@ -28,7 +29,6 @@
     .primer_mensajito{
         font-size: 30px;
         color: #000000;
-        font-family: cursive;
         margin: 20px 0;
     }
     #arbolito{
@@ -55,6 +55,15 @@
     <label for="apellido" ><h3>Coloca tu apellido</h3></label><input type="text"id="apellido" name="apellido">
     <label for="edad" ><h3>tu edad tambien</h3></label><input type="number"id="edad" name="edad">
     <label for="Email" ><h3>tu Email aqui 👇 </h3></label><input type="email"id="Email" name="Email">
+    <label for="eliges_que_eres" ><h3>tu nivel eres, aqui 👇 </h3></label> 
+    <select name="nivel" id="nivel">
+        <option value="nivel_1" id="nivel BRONCE">nivel BRONCE</option>
+        <option value="nivel_2" id="nivel HIERRO">nivel HIERRO</option>
+        <option value="nivel_3" id="nivel PLATA">nivel PLATA</option>
+        <option value="nivel_4" id="nivel ORO">nivel ORO</option>
+        <option value="nivel_5" id="nivel DIAMANTE">nivel DIAMANTE</option>
+        <option value="nivel_6" id="nivel ADAMANTIO">nivel ADAMANTIO</option>
+    </select>
     <input type="submit" value="envio">
     </form>
     <?php 
@@ -71,8 +80,8 @@
     else {
         echo "<div class= 'primer_mensajito'>faltan datos por llenar </div>";
     }
-     ?>
-    <form method="get" action="nueva_pagina.php">
+    ?>
+    <form method="get" action="respuesta_y_calculo_de_paquetes.php">
         <h1>mete tus nombres</h1>
             <label for="nombre1" ><h3>Pon tu nombre </h3></label><input type="text" id="nombre1" name="nombre1" >
             <label for="nombre2" ><h3>pon un segundo nombre </h3></label><input type="text"id="nombre2" name="nombre2">
@@ -93,7 +102,7 @@
         }
     }
 ?>
-    <button id="arbolito">Un arbolito de navidad</button>
+    <button id="arbolito" style="font-family: cursive;">Un arbolito de navidad</button>
     <script>
         document.getElementById("arbolito").addEventListener("click", function() {
             window.location.href = "http://localhost/juan/triangulo.php";
